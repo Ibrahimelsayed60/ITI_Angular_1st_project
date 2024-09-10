@@ -39,7 +39,9 @@
       [style.background-color]="(prd.quantity==0)?'yellow':'light'"> -->
       <!-- <ng-container *ngFor="let prd of prdList; let i = index;">
         <tr *ngIf="prd.quantity!=0"> -->
-      <tr *ngFor="let prd of prdList; let i = index;">
+      <!-- <tr *ngFor="let prd of prdList; let i = index;" [class.bg-warning]="prd.quantity==0"> -->
+      <!-- <tr *ngFor="let prd of prdList; let i = index;" [ngClass]="{'bg-warning':prd.quantity==0, 'text-primary':prd.quantity==0}"> -->
+      <tr *ngFor="let prd of prdList; let i = index;" [ngStyle]="{'background-color':prd.quantity==0?'yellow':'gray', 'color':prd.quantity==0?'darkred':'darkblue'}">
         <td>{{i+1}}</td>
         <td>{{prd.name}}</td>
         <td><img [src]="prd.imgURL" alt=""></td>
