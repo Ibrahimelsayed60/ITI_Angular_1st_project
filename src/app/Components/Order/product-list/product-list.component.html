@@ -30,7 +30,8 @@
         <th scope="col">Name</th>
         <th scope="col">Image</th>
         <th scope="col">Av. Qunatity</th>
-        <th scope="col">Price</th>
+        <th scope="col">Price in USD</th>
+        <th scope="col">Price in EGP</th>
         <th scope="col">Count</th>
         <th scope="col">Buy</th>
       </tr>
@@ -65,7 +66,8 @@
           </ng-container>
 
         </td>
-        <td>{{prd.price | currency: 'EUR':'code'}}</td>
+        <td>{{prd.price | currency: 'USD':'symbol'}}</td>
+        <td>{{prd.price }}</td>
         <td><input #itemsCount class="form-control" type="number"></td>
         <td><button type="button" class="btn btn-primary" (click)="buy(prd.price, itemsCount.value)">
           Buy
