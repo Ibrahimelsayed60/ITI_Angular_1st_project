@@ -6,10 +6,11 @@ import { Directive, ElementRef, HostListener, Input } from '@angular/core';
 export class LightBoxDirective {
 
   @Input('LightBox') highLightColor:string="yellow";
+  @Input() defaultColor:string = "darkblue";
 
   constructor(private elemRef:ElementRef)
   {
-    this.elemRef.nativeElement.style.border="2px solid darkblue";
+    this.elemRef.nativeElement.style.border=`2px solid ${this.defaultColor}`;
   }
 
   @HostListener('mouseover') onMouseOver()
@@ -19,7 +20,7 @@ export class LightBoxDirective {
 
   @HostListener('mouseout') onMouseOut()
   {
-    this.elemRef.nativeElement.style.border="2px solid darkblue";
+    this.elemRef.nativeElement.style.border=`2px solid ${this.defaultColor}`;
   }
 
 }
