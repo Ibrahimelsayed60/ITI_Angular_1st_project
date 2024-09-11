@@ -44,7 +44,10 @@
       <tr *ngFor="let prd of prdList; let i = index;" [ngStyle]="{'background-color':prd.quantity==0?'yellow':'gray', 'color':prd.quantity==0?'darkred':'darkblue'}">
         <td>{{i+1}}</td>
         <td>{{prd.name}}</td>
-        <td><img LightBox highLightColor="red" [src]="prd.imgURL" alt=""></td>
+        <td>
+          <!-- <img LightBox highLightColor="red" [src]="prd.imgURL" alt=""> -->
+          <img LightBox="red" [src]="prd.imgURL" alt="">
+        </td>
         <td >
           <!-- <div *ngIf="prd.quantity!=0">{{prd.quantity}}</div>
           <div *ngIf="prd.quantity==0">Out of stock</div> -->

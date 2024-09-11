@@ -5,7 +5,7 @@ import { Directive, ElementRef, HostListener, Input } from '@angular/core';
 })
 export class LightBoxDirective {
 
-  @Input() highLightColor:string="yellow";
+  @Input('LightBox') highLightColor:string="yellow";
 
   constructor(private elemRef:ElementRef)
   {
