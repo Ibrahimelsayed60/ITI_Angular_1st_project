@@ -62,7 +62,7 @@
           </ng-container>
 
         </td>
-        <td>{{prd.price}}</td>
+        <td>{{prd.price | currency: 'EUR':'code'}}</td>
         <td><input #itemsCount class="form-control" type="number"></td>
         <td><button type="button" class="btn btn-primary" (click)="buy(prd.price, itemsCount.value)">
           Buy

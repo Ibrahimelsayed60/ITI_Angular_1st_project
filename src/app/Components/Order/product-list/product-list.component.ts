@@ -22,9 +22,9 @@ export class ProductListComponent implements OnInit {
     ];
 
     this.prdList= [
-      {id:100, name:"Lenovo Thinkpad", price:100, quantity: 1, imgURL:"https://picsum.photos/200/150/" , categoryID: 1},
-      {id:200, name:"Apple MacBook", price:200, quantity: 0, imgURL:"https://picsum.photos/200/150/" , categoryID: 1},
-      {id:300, name:"Lenovo Tab 2", price:300, quantity: 10, imgURL:"https://picsum.photos/200/150/" , categoryID: 2},
+      {id:100, name:"Lenovo Thinkpad", price:1000000, quantity: 1, imgURL:"https://picsum.photos/200/150/" , categoryID: 1},
+      {id:200, name:"Apple MacBook", price:200778, quantity: 0, imgURL:"https://picsum.photos/200/150/" , categoryID: 1},
+      {id:300, name:"Lenovo Tab 2", price:3000, quantity: 10, imgURL:"https://picsum.photos/200/150/" , categoryID: 2},
       {id:400, name:"Samsung Tab", price:400, quantity: 2, imgURL:"https://picsum.photos/200/150/" , categoryID: 2},
       {id:500, name:"Samsung Note 10", price:500, quantity: 0, imgURL:"https://picsum.photos/200/150/" , categoryID: 2},
       {id:600, name:"Samsung Note 8", price:600, quantity: 5, imgURL:"https://picsum.photos/200/150/" , categoryID: 3},
