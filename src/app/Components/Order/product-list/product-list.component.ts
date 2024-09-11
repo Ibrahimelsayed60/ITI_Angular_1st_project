@@ -12,7 +12,7 @@ export class ProductListComponent implements OnInit {
   prdList:IProduct[];
   selectedCatID:number=0;
   orderTotalPrice:number=0;
-
+  orderDate:Date;
   constructor()
   {
     this.catList = [
@@ -29,6 +29,7 @@ export class ProductListComponent implements OnInit {
       {id:500, name:"Samsung Note 10", price:500, quantity: 0, imgURL:"https://picsum.photos/200/150/" , categoryID: 2},
       {id:600, name:"Samsung Note 8", price:600, quantity: 5, imgURL:"https://picsum.photos/200/150/" , categoryID: 3},
     ];
+    this.orderDate = new Date();
   }
 
   ngOnInit(): void {
