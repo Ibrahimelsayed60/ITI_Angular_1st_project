@@ -8,7 +8,7 @@ import { IProduct } from 'src/app/Models/iproduct';
   styleUrls: ['./product-list.component.scss']
 })
 export class ProductListComponent implements OnInit {
-  catList:ICategory[];
+  // catList:ICategory[];
   prdList:IProduct[];
   prdListOfCat:IProduct[] =[];
   selectedCatID:number=0;
@@ -16,11 +16,7 @@ export class ProductListComponent implements OnInit {
   orderDate:Date;
   constructor()
   {
-    this.catList = [
-      {id: 1, name:"Laptop"},
-      {id: 2, name:"Tablet"},
-      {id: 3, name:"Mobile"},
-    ];
+
 
     this.prdList= [
       {id:100, name:"Lenovo Thinkpad", price:1000000, quantity: 1, imgURL:"https://picsum.photos/200/150/" , categoryID: 1},
