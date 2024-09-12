@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { ICategory } from 'src/app/Models/icategory';
 import { IProduct } from 'src/app/Models/iproduct';
 
@@ -7,11 +7,11 @@ import { IProduct } from 'src/app/Models/iproduct';
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.scss']
 })
-export class ProductListComponent implements OnInit {
+export class ProductListComponent implements OnInit, OnChanges {
   // catList:ICategory[];
   prdList:IProduct[];
   prdListOfCat:IProduct[] =[];
-  selectedCatID:number=0;
+  @Input() sentCatID:number=0;
   orderTotalPrice:number=0;
   orderDate:Date;
   constructor()
@@ -29,6 +29,9 @@ export class ProductListComponent implements OnInit {
     this.orderDate = new Date();
     this.prdListOfCat = this.prdList;
   }
+  ngOnChanges(): void {
+    this.filterProductsByCatID();
+  }
 
   ngOnInit(): void {
   }
@@ -38,7 +41,7 @@ export class ProductListComponent implements OnInit {
   }
 
   filterProductsByCatID(){
-    this.prdListOfCat = this.prdList.filter(prd=>prd.categoryID==this.selectedCatID);
+    this.prdListOfCat = this.prdList.filter(prd=>prd.categoryID==this.sentCatID);
   }
 
   buy(prdPrice:number, count:string):void{
@@ -51,8 +54,8 @@ export class ProductListComponent implements OnInit {
 
   }
 
-  changeCat(){
-    this.selectedCatID=1;
-  }
+  // changeCat(){
+  //   this.selectedCatID=1;
+  // }
 
 }
