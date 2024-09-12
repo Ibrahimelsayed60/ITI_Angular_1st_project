@@ -2,12 +2,12 @@
   <div class="mb-3">
     <label for="prdCat" class="form-label">Category: </label>
     <!-- <select #cat class="form-select" name="cat" id="prdCat" onchange="getSelCat(cat.value)"> -->
-    <select class="form-select" name="cat" id="prdCat" [(ngModel)]="selectedCatID">
+    <select class="form-select" name="cat" id="prdCat" [(ngModel)]="selectedCatID" (change)="filterProductsByCatID()">
       <option *ngFor="let cat of catList" [value]="cat.id">{{cat.name}}</option>
     </select>
   </div>
 
-  <div class="text-secondary">
+  <!-- <div class="text-secondary">
     [To be Removed] For test:
     {{selectedCatID}}<br>
     <button type="button" class="btn btn-primary" (click)="changeCat()">
@@ -17,7 +17,7 @@
     <br>
     Order's Date: {{orderDate | date:'longDate'}}
 
-  </div>
+  </div> -->
 
 
   <hr>
@@ -45,7 +45,7 @@
         <tr *ngIf="prd.quantity!=0"> -->
       <!-- <tr *ngFor="let prd of prdList; let i = index;" [class.bg-warning]="prd.quantity==0"> -->
       <!-- <tr *ngFor="let prd of prdList; let i = index;" [ngClass]="{'bg-warning':prd.quantity==0, 'text-primary':prd.quantity==0}"> -->
-      <tr *ngFor="let prd of prdList; let i = index;" [ngStyle]="{'background-color':prd.quantity==0?'yellow':'gray', 'color':prd.quantity==0?'darkred':'darkblue'}">
+      <tr *ngFor="let prd of prdListOfCat; let i = index;" [ngStyle]="{'background-color':prd.quantity==0?'yellow':'gray', 'color':prd.quantity==0?'darkred':'darkblue'}">
         <td>{{i+1}}</td>
         <td>{{prd.name}}</td>
         <td>

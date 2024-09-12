@@ -10,6 +10,7 @@ import { IProduct } from 'src/app/Models/iproduct';
 export class ProductListComponent implements OnInit {
   catList:ICategory[];
   prdList:IProduct[];
+  prdListOfCat:IProduct[] =[];
   selectedCatID:number=0;
   orderTotalPrice:number=0;
   orderDate:Date;
@@ -30,6 +31,7 @@ export class ProductListComponent implements OnInit {
       {id:600, name:"Samsung Note 8", price:600, quantity: 5, imgURL:"https://picsum.photos/200/150/" , categoryID: 3},
     ];
     this.orderDate = new Date();
+    this.prdListOfCat = this.prdList;
   }
 
   ngOnInit(): void {
@@ -37,6 +39,10 @@ export class ProductListComponent implements OnInit {
 
   prdTrackByFn(index:number, prd:IProduct){
     return prd.id;
+  }
+
+  filterProductsByCatID(){
+    this.prdListOfCat = this.prdList.filter(prd=>prd.categoryID==this.selectedCatID);
   }
 
   buy(prdPrice:number, count:string):void{
