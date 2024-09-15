@@ -41,7 +41,11 @@ export class ProductListComponent implements OnInit, OnChanges {
   }
 
   filterProductsByCatID(){
-    this.prdListOfCat = this.prdList.filter(prd=>prd.categoryID==this.sentCatID);
+    if(this.sentCatID==0){
+      this.prdListOfCat=this.prdList;
+    }else{
+      this.prdListOfCat = this.prdList.filter(prd=>prd.categoryID==this.sentCatID);
+    }
   }
 
   buy(prdPrice:number, count:string):void{
