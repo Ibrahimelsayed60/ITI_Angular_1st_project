@@ -10,11 +10,11 @@
 
 <hr>
 <div class="bg-warning">
-  <app-product-list [sentCatID]="selectedCatID"></app-product-list>
+  <app-product-list [sentCatID]="selectedCatID" (totalPriceChanged)="onTotalPriceChanged($event)"></app-product-list>
 </div>
 
 <hr>
 <h3>
 
-  Order Total Price: {{orderTotalPrice}}
+  Order Total Price: {{receivedOrderTotalPrice}}
 </h3>

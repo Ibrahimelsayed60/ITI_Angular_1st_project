@@ -10,7 +10,7 @@ export class OrderMasterComponent implements OnInit {
 
   catList:ICategory[];
   selectedCatID:number=0;
-  orderTotalPrice:number=0;
+  receivedOrderTotalPrice:number=0;
   constructor()
   {
     this.catList = [
@@ -21,6 +21,11 @@ export class OrderMasterComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  onTotalPriceChanged(totalPrice:number)
+  {
+    this.receivedOrderTotalPrice = totalPrice;
   }
 
 }
