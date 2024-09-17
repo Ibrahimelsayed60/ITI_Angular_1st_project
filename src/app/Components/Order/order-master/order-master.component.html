@@ -14,7 +14,16 @@
 </div>
 
 <hr>
+
+<div>
+  <h3>Enter your name:</h3>
+  <input #clientNameInp type="text" class="form-control">
+</div>
+
 <h3>
 
   Order Total Price: {{receivedOrderTotalPrice}}
 </h3>
+<button type="button" class="btn btn-primary" (click)="completeOrder()">
+  Place Order
+</button>
